@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐋 Pico Whale Control Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="ocean-bg">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-emoji">🐋</span>
+                <h1>Pico Whale Control Panel</h1>
+            </div>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-dot disconnected"></span>
+                <span class="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Whale Status Cards -->
+            <section class="whale-cards">
+                <div class="whale-card" id="whale1Card">
+                    <div class="whale-visual">
+                        <div class="led-ring" id="whale1Ring">
+                            <div class="led" data-index="0"></div>
+                            <div class="led" data-index="1"></div>
+                            <div class="led" data-index="2"></div>
+                            <div class="led" data-index="3"></div>
+                            <div class="led" data-index="4"></div>
+                            <div class="led" data-index="5"></div>
+                            <div class="led" data-index="6"></div>
+                            <div class="led" data-index="7"></div>
+                            <div class="led" data-index="8"></div>
+                            <div class="led" data-index="9"></div>
+                            <div class="led" data-index="10"></div>
+                            <div class="led" data-index="11"></div>
+                        </div>
+                        <span class="whale-emoji">🐋</span>
+                    </div>
+                    <div class="whale-info">
+                        <h3>Whale 1</h3>
+                        <p class="whale-status online">Online</p>
+                        <p class="whale-location">Your House</p>
+                    </div>
+                    <button class="touch-btn" onclick="sendTouch('whale_1')">
+                        <span>👆</span> Touch
+                    </button>
+                </div>
+
+                <div class="connection-line">
+                    <div class="pulse-ring"></div>
+                    <span>⟷</span>
+                </div>
+
+                <div class="whale-card" id="whale2Card">
+                    <div class="whale-visual">
+                        <div class="led-ring" id="whale2Ring">
+                            <div class="led" data-index="0"></div>
+                            <div class="led" data-index="1"></div>
+                            <div class="led" data-index="2"></div>
+                            <div class="led" data-index="3"></div>
+                            <div class="led" data-index="4"></div>
+                            <div class="led" data-index="5"></div>
+                            <div class="led" data-index="6"></div>
+                            <div class="led" data-index="7"></div>
+                            <div class="led" data-index="8"></div>
+                            <div class="led" data-index="9"></div>
+                            <div class="led" data-index="10"></div>
+                            <div class="led" data-index="11"></div>
+                        </div>
+                        <span class="whale-emoji">🐋</span>
+                    </div>
+                    <div class="whale-info">
+                        <h3>Whale 2</h3>
+                        <p class="whale-status online">Online</p>
+                        <p class="whale-location">Friend's House</p>
+                    </div>
+                    <button class="touch-btn" onclick="sendTouch('whale_2')">
+                        <span>👆</span> Touch
+                    </button>
+                </div>
+            </section>
+
+            <!-- Control Panel -->
+            <section class="control-panel">
+                <div class="panel-card">
+                    <h3>🎨 LED Color</h3>
+                    <div class="color-picker-container">
+                        <input type="color" id="colorPicker" value="#ff64c8">
+                        <div class="color-presets">
+                            <button class="color-preset" data-color="#ff64c8" style="background: #ff64c8"
+                                title="Pink"></button>
+                            <button class="color-preset" data-color="#00d4ff" style="background: #00d4ff"
+                                title="Cyan"></button>
+                            <button class="color-preset" data-color="#00ff88" style="background: #00ff88"
+                                title="Green"></button>
+                            <button class="color-preset" data-color="#ffa500" style="background: #ffa500"
+                                title="Orange"></button>
+                            <button class="color-preset" data-color="#ff4444" style="background: #ff4444"
+                                title="Red"></button>
+                            <button class="color-preset" data-color="#aa00ff" style="background: #aa00ff"
+                                title="Purple"></button>
+                            <button class="color-preset" data-color="#ffffff" style="background: #ffffff"
+                                title="White"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <h3>🌊 Animation Pattern</h3>
+                    <div class="pattern-grid">
+                        <button class="pattern-btn active" data-pattern="pulse">
+                            <span class="pattern-icon">💓</span>
+                            <span>Pulse</span>
+                        </button>
+                        <button class="pattern-btn" data-pattern="breathing">
+                            <span class="pattern-icon">🌬️</span>
+                            <span>Breathing</span>
+                        </button>
+                        <button class="pattern-btn" data-pattern="rainbow">
+                            <span class="pattern-icon">🌈</span>
+                            <span>Rainbow</span>
+                        </button>
+                        <button class="pattern-btn" data-pattern="wave">
+                            <span class="pattern-icon">🌊</span>
+                            <span>Wave</span>
+                        </button>
+                        <button class="pattern-btn" data-pattern="sparkle">
+                            <span class="pattern-icon">✨</span>
+                            <span>Sparkle</span>
+                        </button>
+                        <button class="pattern-btn" data-pattern="solid">
+                            <span class="pattern-icon">💡</span>
+                            <span>Solid</span>
+                        </button>
+                        <button class="pattern-btn" data-pattern="ocean">
+                            <span class="pattern-icon">🐳</span>
+                            <span>Ocean</span>
+                        </button>
+                        <button class="pattern-btn" data-pattern="celebration">
+                            <span class="pattern-icon">🎉</span>
+                            <span>Party</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <h3>⚡ Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="action-btn sync" onclick="syncAll()">
+                            <span>🔄</span> Sync All
+                        </button>
+                        <button class="action-btn off" onclick="turnOff()">
+                            <span>🌙</span> Turn Off
+                        </button>
+                        <button class="action-btn test" onclick="testConnection()">
+                            <span>📡</span> Test
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Log -->
+            <section class="log-panel">
+                <h3>📋 Activity Log</h3>
+                <div class="log-container" id="logContainer">
+                    <div class="log-entry info">
+                        <span class="log-time">--:--:--</span>
+                        <span class="log-message">Initializing control panel...</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🐋 Pico Whale Project • Built with ❤️ for connected friends</p>
+            <p class="mqtt-info">MQTT: <code>broker.hivemq.com</code> • Topic:
+                <code>pico_whale/whale_pair_jeff_friend</code></p>
+        </footer>
+    </div>
+
+    <!-- MQTT.js Library -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

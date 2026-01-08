@@ -1,0 +1,17 @@
+# Python & MicroPython
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# IDE settings
+.vscode/
+.idea/
+.DS_Store
+
+# User-specific images (optional, usually we keep assets but ignore temporary ones)
+# Keeping images for now as they are part of project documentation
+
+# Local secrets (if we had a separate secrets file)
+# src/secrets.py
